@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#17251d">
+  <title>Özi'nin Pixel Macerası</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="game" class="game-shell">
+    <section id="menu" class="screen active chalkboard">
+      <div class="board-frame"><div class="menu-content">
+        <p class="eyebrow">✦ PIXEL WORLD ✦</p>
+        <h1 id="game-title">ÖZİ'NİN<br>MACERASI</h1>
+        <p class="subtitle" id="menu-subtitle">Öğretmenler Günü Özel</p>
+        <div class="menu-actions">
+          <button class="pixel-btn primary" id="play-btn">OYUNA BAŞLA ➜</button>
+          <button class="pixel-btn" id="instructions-btn">NASIL OYNANIR?</button>
+          <button class="pixel-btn" id="settings-btn">AYARLAR ⚙</button>
+        </div>
+        <div class="language-switch"><button id="tr-btn" class="selected">TR</button><button id="en-btn">EN</button></div>
+        <p class="tiny-note">A LITTLE PIXEL ADVENTURE</p>
+      </div></div>
+    </section>
+
+    <section id="classroom" class="screen classroom">
+      <div class="classroom-wall"></div><div class="classroom-floor"></div>
+      <div class="classroom-window"><i></i><i></i><i></i><i></i></div>
+      <div class="desk"><div class="monitor"><div class="monitor-screen"><span class="boot-text" id="boot-text">SYSTEM STARTING...</span></div><div class="monitor-neck"></div><div class="monitor-base"></div></div><div class="keyboard"></div><div class="mouse"></div></div>
+      <div class="ozi-wrap classroom-ozi"><img class="ozi-img" src="assets/ozi.png" alt="Özi" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="ozi-fallback">◕‿◕</div></div>
+      <div class="dialogue" id="classroom-dialogue">Merhaba! Hazır mısın?</div>
+      <button class="pixel-btn primary scene-btn" id="classroom-next">DEVAM ET ➜</button>
+    </section>
+
+    <section id="car" class="screen car-scene">
+      <div class="night-sky"><span class="star s1">✦</span><span class="star s2">✧</span><span class="star s3">✦</span><span class="moon">◔</span></div>
+      <div class="city"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="road"><div class="road-lines" id="road-lines"></div></div>
+      <img class="pixel-car" src="assets/pixel-car.png" alt="Pixel araba" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <div class="car-fallback">🚗</div>
+      <div class="car-dialogue" id="car-dialogue">Yola çıkıyoruz!</div>
+      <button class="pixel-btn primary scene-btn" id="drive-btn">YOLA ÇIK ➜</button>
+    </section>
+
+    <section id="building" class="screen building-scene">
+      <svg id="boyabat-building" viewBox="0 0 1000 700" preserveAspectRatio="none" role="img" aria-label="Boyabat İnönü Öğretmenevi çizimi">
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6ebad7"/><stop offset="1" stop-color="#b8dce8"/></linearGradient>
+          <g id="cloud"><rect x="0" y="22" width="170" height="25" rx="13" fill="#fff" opacity=".8"/><circle cx="42" cy="22" r="25" fill="#fff" opacity=".82"/><circle cx="112" cy="17" r="30" fill="#fff" opacity=".82"/></g>
+          <g id="window"><rect width="90" height="130" fill="#4b2919"/><rect x="7" y="8" width="76" height="114" fill="#3b7097"/><path d="M45 8V122 M7 65H83 M7 38H83 M7 92H83" stroke="#482719" stroke-width="6"/><path d="M4 3H86" stroke="#b8ad9c" stroke-width="5"/></g>
+          <g id="door"><rect width="72" height="170" fill="#4d2717" stroke="#29170e" stroke-width="4"/><rect x="8" y="8" width="56" height="68" fill="none" stroke="#925c33" stroke-width="3"/><rect x="8" y="91" width="56" height="69" fill="none" stroke="#925c33" stroke-width="3"/><circle cx="58" cy="84" r="3" fill="#d7b16c"/></g>
+        </defs>
+        <rect width="1000" height="700" fill="url(#sky)"/>
+        <use href="#cloud" x="45" y="25"/><use href="#cloud" x="690" y="30" transform="translate(690 30) scale(.92) translate(-690 -30)"/><use href="#cloud" x="420" y="4" transform="translate(420 4) scale(.65) translate(-420 -4)"/>
+        <rect x="0" y="595" width="1000" height="105" fill="#575750"/>
+        <rect x="8" y="83" width="984" height="546" fill="#e8e3d1" stroke="#7a6e61" stroke-width="4"/>
+        <rect x="8" y="396" width="984" height="9" fill="#b8ada0"/><rect x="8" y="407" width="984" height="5" fill="#fff" opacity=".65"/>
+        <path d="M-20 110 L1020 35 L1020 130 L-20 177Z" fill="#4f2917"/><rect x="-10" y="106" width="1020" height="19" fill="#7a4321"/>
+        <use href="#window" x="42" y="155" width="112" height="133"/><use href="#window" x="185" y="155" width="112" height="133"/><use href="#window" x="414" y="155" width="105" height="133"/><use href="#window" x="665" y="155" width="112" height="133"/><use href="#window" x="846" y="155" width="112" height="133"/>
+        <rect x="315" y="300" width="290" height="53" rx="4" fill="#eaf5e4" stroke="#26704a" stroke-width="5"/>
+        <g fill="#192c22" text-anchor="middle" font-family="monospace" font-weight="bold"><text x="460" y="315" font-size="12">SİNOP / BOYABAT</text><text x="460" y="333" font-size="15">BOYABAT İNÖNÜ ÖĞRETMENEVİ</text><text x="460" y="347" font-size="12">VE A.S.O. MÜDÜRLÜĞÜ</text></g>
+        <use href="#window" x="33" y="420" width="120" height="140"/><use href="#window" x="183" y="420" width="120" height="140"/><use href="#window" x="700" y="420" width="120" height="140"/><use href="#window" x="850" y="420" width="120" height="140"/>
+        <rect x="390" y="424" width="220" height="190" fill="#c2b8aa"/><rect x="405" y="432" width="190" height="182" fill="#e0d9ce"/><use href="#door" x="425" y="448" width="72" height="166"/><use href="#door" x="503" y="448" width="72" height="166"/><use href="#window" x="447" y="371" width="106" height="70"/>
+        <rect x="770" y="300" width="4" height="300" fill="#393b3b"/><rect x="788" y="325" width="35" height="78" fill="#d9232e"/><text x="805" y="372" font-size="22" text-anchor="middle" fill="white">★</text><rect x="940" y="300" width="4" height="300" fill="#393b3b"/><rect x="948" y="325" width="32" height="78" fill="white"/>
+        <rect x="850" y="545" width="72" height="55" fill="#5b5c5e"/><rect x="870" y="515" width="32" height="30" rx="5" fill="#9e927b"/><circle cx="886" cy="503" r="14" fill="#ab926e"/>
+        <g id="steps" fill="#6d6960" stroke="#b0aa98" stroke-width="2"><path d="M305 588H695V612H305Z"/><path d="M280 607H720V631H280Z"/><path d="M255 626H745V650H255Z"/><path d="M230 645H770V669H230Z"/><path d="M205 664H795V688H205Z"/></g>
+        <g opacity=".12" stroke="#fff"><path d="M0 682H1000M55 660V700M110 660V700M165 660V700M220 660V700M275 660V700M330 660V700M385 660V700M440 660V700M495 660V700M550 660V700M605 660V700M660 660V700M715 660V700M770 660V700M825 660V700M880 660V700M935 660V700"/></g>
+      </svg>
+      <div class="building-ozi" id="building-ozi"><img src="assets/ozi.png" alt="Özi" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span>◕‿◕</span></div>
+      <div class="building-overlay" id="building-overlay"><div id="building-message" class="building-message">BOYABAT'A HOŞ GELDİN!</div></div>
+      <button class="pixel-btn primary scene-btn hidden" id="start-quiz-btn">QUIZE BAŞLA ➜</button>
+    </section>
+
+    <section id="quiz" class="screen chalkboard quiz-screen"><div class="board-frame quiz-frame">
+      <header class="quiz-header"><strong>✦ ÖĞRETMENLER GÜNÜ ÖZEL QUIZ ✦</strong><span id="question-count">1/8</span></header>
+      <div id="quiz-content" class="quiz-content">
+        <h2 id="question-text"></h2><div id="answer-options" class="answer-options"></div>
+        <p id="feedback" class="feedback"></p>
+      </div>
+      <div class="quiz-bottom"><div class="quiz-ozi"><img src="assets/ozi.png" alt="Özi" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span>◕‿◕</span></div><div class="quiz-controls"><p id="quiz-prompt">HADİ BAKALIM, CEVABI BİLİYOR MUSUN?</p><button class="pixel-btn primary" id="quiz-action" disabled>CEVABI İŞARETLE ➜</button></div></div>
+    </div></section>
+
+    <section id="settings" class="screen chalkboard"><div class="board-frame simple-panel"><header><button class="back-btn" data-back>←</button><h2 id="settings-title">AYARLAR</h2><span>⚙</span></header><div class="setting-row"><label id="music-label" for="music-toggle">PIXEL MÜZİK</label><input id="music-toggle" type="checkbox" checked></div><div class="setting-row"><label id="sound-label" for="sound-toggle">SES EFEKTLERİ</label><input id="sound-toggle" type="checkbox" checked></div><div class="setting-row"><label id="animation-label" for="animation-toggle">ANİMASYONLAR</label><input id="animation-toggle" type="checkbox" checked></div><div class="volume-row"><label id="volume-label" for="volume">SES SEVİYESİ</label><input id="volume" type="range" min="0" max="1" step=".01" value=".5"></div></div></section>
+
+    <section id="instructions" class="screen chalkboard"><div class="board-frame simple-panel"><header><button class="back-btn" data-back>←</button><h2 id="instructions-title">NASIL OYNANIR?</h2><span></span></header><div class="instructions-list"><p><b>01</b><span id="instruction-1">Önce Özi ile tanış.</span></p><p><b>02</b><span id="instruction-2">Pixel dünyasında küçük bir yolculuğa çık.</span></p><p><b>03</b><span id="instruction-3">Soruları dikkatlice oku ve doğru cevabı seç.</span></p><p><b>04</b><span id="instruction-4">Bakalım kaç puan toplayabileceksin!</span></p></div></div></section>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
